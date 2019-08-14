@@ -1,3 +1,5 @@
+// Testing, testing
+
 /* -------------- Variables!!! -------------- */
 var currentRow = 1,
     colors = [
