@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mastermind</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='style.css'>
+  </head>
+  <body>
+    <header>
+      <h1>Mastermind</h1>
+      <p>A game by <span><a href="">Dan H.</a></span></p>
+    </header>
+
+    <main>
+      <div id="gameboard">
+        <div class="hide-answer-row"></div>
+        <div class="answer-row">
+          <div class="answer-spots">
+            <div id="answer1" class="answer-spot"></div>
+            <div id="answer2" class="answer-spot"></div>
+            <div id="answer3" class="answer-spot"></div>
+            <div id="answer4" class="answer-spot"></div>
+          </div>
+        </div>
+        <div class="row" id="row10">
+          <div class="row-el num">
+            <span>10</span>
+          </div>
+          <div class="row-el spots">
+            <div class="spot spot1"></div>
+            <div class="spot spot2"></div>
+            <div class="spot spot3"></div>
+            <div class="spot spot4"></div>
+          </div>
+          <div class="row-el checkers">
+            <div class="check check1"></div>
+            <div class="check check2"></div>
+            <div class="check check3"></div>
+            <div class="check check4"></div>
+          </div>
+        </div>
+        <div class="row" id="row9">
+          <div class="row-el num">
+            <span>9</span>
+          </div>
+          <div class="row-el spots">
+            <div class="spot spot1"></div>
+            <div class="spot spot2"></div>
+            <div class="spot spot3"></div>
+            <div class="spot spot4"></div>
+          </div>
+          <div class="row-el checkers">
+            <div class="check check1"></div>
+            <div class="check check2"></div>
+            <div class="check check3"></div>
+            <div class="check check4"></div>
+          </div>
+        </div>
+        <div class="row" id="row8">
+          <div class="row-el num">
+            <span>8</span>
+          </div>
+          <div class="row-el spots">
+            <div class="spot spot1"></div>
+            <div class="spot spot2"></div>
+            <div class="spot spot3"></div>
+            <div class="spot spot4"></div>
+          </div>
+          <div class="row-el checkers">
+            <div class="check check1"></div>
+            <div class="check check2"></div>
+            <div class="check check3"></div>
+            <div class="check check4"></div>
+          </div>
+        </div>
+        <div class="row" id="row7">
+          <div class="row-el num">
+            <span>7</span>
+          </div>
+          <div class="row-el spots">
+            <div class="spot spot1"></div>
+            <div class="spot spot2"></div>
+            <div class="spot spot3"></div>
+            <div class="spot spot4"></div>
+          </div>
+          <div class="row-el checkers">
+            <div class="check check1"></div>
+            <div class="check check2"></div>
+            <div class="check check3"></div>
+            <div class="check check4"></div>
+          </div>
+        </div>
+        <div class="row" id="row6">
+          <div class="row-el num">
+            <span>6</span>
+          </div>
+          <div class="row-el spots">
+            <div class="spot spot1"></div>
+            <div class="spot spot2"></div>
+            <div class="spot spot3"></div>
+            <div class="spot spot4"></div>
+          </div>
+          <div class="row-el checkers">
+            <div class="check check1"></div>
+            <div class="check check2"></div>
+            <div class="check check3"></div>
+            <div class="check check4"></div>
+          </div>
+        </div>
+        <div class="row" id="row5">
+          <div class="row-el num">
+            <span>5</span>
+          </div>
+          <div class="row-el spots">
+            <div class="spot spot1"></div>
+            <div class="spot spot2"></div>
+            <div class="spot spot3"></div>
+            <div class="spot spot4"></div>
+          </div>
+          <div class="row-el checkers">
+            <div class="check check1"></div>
+            <div class="check check2"></div>
+            <div class="check check3"></div>
+            <div class="check check4"></div>
+          </div>
+        </div>
+        <div class="row" id="row4">
+          <div class="row-el num">
+            <span>4</span>
+          </div>
+          <div class="row-el spots">
+            <div class="spot spot1"></div>
+            <div class="spot spot2"></div>
+            <div class="spot spot3"></div>
+            <div class="spot spot4"></div>
+          </div>
+          <div class="row-el checkers">
+            <div class="check check1"></div>
+            <div class="check check2"></div>
+            <div class="check check3"></div>
+            <div class="check check4"></div>
+          </div>
+        </div>
+        <div class="row" id="row3">
+          <div class="row-el num">
+            <span>3</span>
+          </div>
+          <div class="row-el spots">
+            <div class="spot spot1"></div>
+            <div class="spot spot2"></div>
+            <div class="spot spot3"></div>
+            <div class="spot spot4"></div>
+          </div>
+          <div class="row-el checkers">
+            <div class="check check1"></div>
+            <div class="check check2"></div>
+            <div class="check check3"></div>
+            <div class="check check4"></div>
+          </div>
+        </div>
+        <div class="row" id="row2">
+          <div class="row-el num">
+            <span>2</span>
+          </div>
+          <div class="row-el spots">
+            <div class="spot spot1"></div>
+            <div class="spot spot2"></div>
+            <div class="spot spot3"></div>
+            <div class="spot spot4"></div>
+          </div>
+          <div class="row-el checkers">
+            <div class="check check1"></div>
+            <div class="check check2"></div>
+            <div class="check check3"></div>
+            <div class="check check4"></div>
+          </div>
+        </div>
+        <div class="row" id="row1">
+          <div class="row-el num">
+            <span>1</span>
+          </div>
+          <div class="row-el spots">
+            <div class="spot spot1 up-next"></div>
+            <div class="spot spot2"></div>
+            <div class="spot spot3"></div>
+            <div class="spot spot4"></div>
+          </div>
+          <div class="row-el checkers">
+            <div class="check check1"></div>
+            <div class="check check2"></div>
+            <div class="check check3"></div>
+            <div class="check check4"></div>
+          </div>
+        </div>
+
+        <div class="bottom-row">
+          <div class="colors">
+            <div class="black color"></div>
+            <div class="brown color"></div>
+            <div class="blue color"></div>
+            <div class="green color"></div>
+            <div class="yellow color"></div>
+            <div class="orange color"></div>
+            <div class="red color"></div>
+            <div class="white color"></div>
+          </div>
+          <div class="buttons">
+            <button class="btn-start">Start Game</button>
+            <button class="btn-guess" disabled>Guess</button>
+            <button class="btn-clear">Clear</button>
+            <button class="btn-restart">New Game</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type='text/javascript' src='app.js'></script>
+  </body>
+</html>

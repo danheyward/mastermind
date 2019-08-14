@@ -1,0 +1,123 @@
+/* Initial CSS */
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+header, main {
+  text-align: center;
+}
+
+/* General Gameboard CSS */
+#gameboard {
+  display: inline-block;
+  width: 600px;
+  height: 1100px;
+  background-color: lightblue;
+}
+
+.hide-answer-row {
+  height: 7%;
+  background-color: green;
+  margin: 1.45vh;
+}
+
+.answer-row {
+  height: 7%;
+  margin: 1.45vh;
+  display: none;
+}
+
+.answer-spot {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: red 1px dashed;
+  margin: 0 10px;
+  margin-top: 2%;
+}
+
+.row {
+  height: 7%;
+  background-color: pink;
+  margin: 1.45vh;
+}
+
+.row-el {
+  height: 75%;
+  margin: 1%;
+  display: inline-block;
+  border: black 1px dashed;
+  vertical-align: middle;
+}
+
+/* Number CSS */
+.answer-spots {
+  height: 100%;
+  vertical-align: center;
+  line-height: 100%;
+}
+
+.num {
+  width: 10%;
+}
+
+/* Spot CSS */
+.spots {
+  width: 55%;
+  padding: .5vw .5vh;
+}
+
+.spot {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: red 1px dashed;
+  /* margin: auto; */
+}
+
+.selected {
+  background-color: blue !important;
+}
+
+/* Checker CSS */
+.checkers {
+  width: 25%;
+}
+
+
+/* Colors */
+.colors {
+  display: none;
+}
+
+.color {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: red 1px dashed;
+}
+
+.color:hover {
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn-start {
+
+}
+
+.btn-guess {
+  display: none;
+}
+
+.btn-clear {
+  display: none;
+}
+
+.btn-restart {
+  display: none;
+}
