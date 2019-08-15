@@ -48,7 +48,7 @@ header, main {
   height: 75%;
   margin: 1%;
   display: inline-block;
-  border: black 1px dashed;
+  /* border: black 1px dashed; */
   vertical-align: middle;
 }
 
@@ -59,32 +59,25 @@ header, main {
   line-height: 100%;
 }
 
-.num {
-  width: 10%;
-}
-
 /* Spot CSS */
 .spots {
-  width: 55%;
+  width: 80%;
   padding: .5vw .5vh;
 }
 
 .spot {
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: red 1px dashed;
+  margin: 5px 10px;
   /* margin: auto; */
-}
-
-.selected {
-  background-color: blue !important;
 }
 
 /* Checker CSS */
 .checkers {
-  width: 25%;
+  width: 10%;
 }
 
 
