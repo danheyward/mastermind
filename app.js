@@ -120,8 +120,10 @@ const restartGame = () => {
 // Change rows after an incorrect guess has been made
 const changeRows = () => {
   $(`#row${currentRow} > .spots > .spot`).removeClass('up-next');
+  $(`#row${currentRow}`).removeClass('current');
   currentRow++;
   $(`#row${currentRow} > .spots > .spot:first`).toggleClass('up-next');
+  $(`#row${currentRow}`).addClass('current');
   $('.btn-guess').prop('disabled', true);
 };
 
@@ -151,6 +153,7 @@ const finishGame = () => {
   $('.btn-clear').toggle();
   $('.hide-answer-row').toggle();
   $('.answer-row').toggle();
+  $(`#row${currentRow}`).addClass('winner');
 };
 
 /* -------------- Click Events!!! -------------- */

@@ -1,6 +1,6 @@
 /* Initial CSS */
 body {
-  margin: 0px;
+  margin: 10px;
   padding: 0px;
 }
 
@@ -40,8 +40,16 @@ header, main {
 
 .row {
   height: 7%;
-  background-color: pink;
   margin: 1.45vh;
+  background-color: lightgray;
+}
+
+.current {
+  background-color: pink;
+}
+
+.winner {
+  background-color: lightgreen;
 }
 
 .row-el {
@@ -88,8 +96,8 @@ header, main {
 
 .color {
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: red 1px dashed;
 }
