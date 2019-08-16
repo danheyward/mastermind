@@ -20,6 +20,7 @@ header, main {
 .hide-answer-row {
   height: 7%;
   margin: 1.45vh;
+  /* Pattern provided by Tab Atkins Jr. from CSS3 Patterns Gallery*/
   background-color: silver;
   background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
   linear-gradient(155deg, #d00 23px, transparent 23px),
@@ -121,7 +122,7 @@ header, main {
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
   border-radius: 40px;
-  color: #ffffff;
+  color: white;
   font-size: 12px;
   text-decoration: none;
   vertical-align: middle;
@@ -145,7 +146,7 @@ header, main {
 }
 
 .btn-start:hover, .btn-guess:hover, .btn-clear:hover, .btn-restart:hover {
-  background: #ffffff;
+  background: white;
   color: #99badd;
 }
 
