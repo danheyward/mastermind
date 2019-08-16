@@ -22,69 +22,66 @@ const randomColor = () => colors[Math.floor(Math.random() * 8)];
 // Fill answer rubric with colors
 const setAnswer = () => {
   if (answer.length) { answer = [];};
-  for (var i = 0; i < 4; i++) {
+  for (let i = 0; i < 4; i++) {
     answer.push(randomColor());
   };
-  return answer;
 };
 
+// Add the correct answer as classes in the answer section
 const displayAnswer = () => {
-  for (var i = 1; i < 5; i++) {
+  for (let i = 1; i < 5; i++) {
     $(`#answer${i}`).toggleClass(`${answer[i-1]}`);
   };
 };
 
-// Switching active spots after a single guess is made
+// Switch active spots after a single spot is clicked
 const switchSpots = () => {
-  var spots = $(`#row${currentRow} > .spots > .spot`);
-  var currentSpot = $(`#row${currentRow} > .spots > .spot.up-next`);
-  var currentSpotNum = +currentSpot
+  let currentSpot = $(`#row${currentRow} > .spots > .spot.up-next`);
+  let currentSpotNum = +currentSpot
     .attr('class')
     .split(/\s/)
-    .filter(el => el !== 'up-next' && el !== 'spot')[0].slice(4);
+    .filter(el => /spot\d/.test(el))[0].slice(4);
   currentSpot.toggleClass('up-next');
-  $(`#row${currentRow} > .spots > .spot${currentSpotNum + 1}`).toggleClass('up-next')
+  $(`#row${currentRow} > .spots > .spot${currentSpotNum + 1}`).toggleClass('up-next');
 }
 
-// See if the guess is correct or incorrect
-const itIsRight = (arr1, arr2) => {
-  return arr1.join('') === arr2.join('');
-}
+// Compare the guess array and answer array to see if they are the same
+const itIsRight = (arr1, arr2) => arr1.join('') === arr2.join('');
 
-// Right Spot, Right Place
-const rSrP = (arr1, arr2) => {
-  var num = 0;
-  for (var i = 0; i < arr1.length; i++) {
+// Count how many spots are correct (Right Spot, Right Place)
+const howManyAreCorrect = (arr1, arr2) => {
+  var count = 0;
+  for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] === arr2[i]) {
-      num++;
+      count++;
     }
   }
-  return num;
+  return count;
 }
 
-// Remove RSRP spots for RSWP calculation
+// Remove correct spots for the howManyAreClose calculation
 const removeCorrectSpots = (arr1, arr2) => {
   [arr1, arr2] = [arr1.slice(0), arr2.slice(0)];
-  for (var i = 0; i < arr1.length; i++) {
+  for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] === arr2[i]) {
       [arr1[i], arr2[i]] = ['X', 'X'];
-    }
-  }
+    };
+  };
   return [arr1, arr2];
 }
 
-// Right Spot, Wrong Place
-const rSwP = (arr1, arr2) => {
+// Count how many spots are the right color but in the wrong index
+const howManyAreClose = (arr1, arr2) => {
   [arr1, arr2] = removeCorrectSpots(arr1, arr2);
-  var num = 0;
-  for (var i = 0; i < arr1.length; i++) {
+  var count = 0;
+  for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] === 'X') {}
     else if (arr2.indexOf(arr1[i]) !== -1 && arr1[i] !== arr2[i]) {
-      num++;
+      count++;
       arr2.splice(arr2.indexOf(arr1[i]), 1, 'X');
-    }
-  }
-  return num;
+    };
+  };
+  return count;
 }
 
 // Place a color in a guess
@@ -95,27 +92,9 @@ const selectColor = color => {
   if (guess.length > 3) {
     $('.btn-guess').prop('disabled', false);
     $('.color').off();
-  }
+  };
   switchSpots();
-}
-
-// Start the game
-const startGame = () => {
-  $('.colors').toggle();
-  $('.btn-start').toggle();
-  $('.btn-guess').toggle();
-  $('.btn-clear').toggle();
 };
-
-const restartGame = () => {
-  $('.colors').toggle();
-  $('.btn-guess').toggle();
-  $('.btn-clear').toggle();
-  $('.btn-restart').toggle();
-  $('.hide-answer-row').toggle();
-  $('.answer-row').toggle();
-  $('.answer-spot').removeClass('black purple blue green yellow orange red white');
-}
 
 // Change rows after an incorrect guess has been made
 const changeRows = () => {
@@ -128,21 +107,30 @@ const changeRows = () => {
 };
 
 // Clear all classes and data attributes of an unsubmitted guess line
-const clearSingleRowValues = () => {
+const clearOneRow = () => {
   $(`#row${currentRow} > .spots > .spot`).removeClass('black purple blue green yellow orange red white up-next');
   $(`#row${currentRow} > .spots > .spot`).removeAttr('data-value');
   $(`#row${currentRow} > .spots > .spot:first`).toggleClass('up-next');
 };
 
-const clearAllValues = () => {
+// Clear the entire board of all classes and data attributes, resets to the start condition
+const clearAllRows = () => {
   $('.spot').removeClass('black purple blue green yellow orange red white up-next');
   $('.spot').removeAttr('data-value');
   $(`#row1 > .spots > .spot:first`).toggleClass('up-next');
   currentRow = 1;
-}
+};
 
 // Reset guess array to empty array
-const resetGuess = () => { guess = []; };
+const resetGuess = () => guess = [];
+
+// Start the game
+const startGame = () => {
+  $('.colors').toggle();
+  $('.btn-start').toggle();
+  $('.btn-guess').toggle();
+  $('.btn-clear').toggle();
+};
 
 // End the game
 const finishGame = () => {
@@ -156,6 +144,17 @@ const finishGame = () => {
   $(`#row${currentRow}`).addClass('winner');
 };
 
+// Start a new game
+const restartGame = () => {
+  $('.colors').toggle();
+  $('.btn-guess').toggle();
+  $('.btn-clear').toggle();
+  $('.btn-restart').toggle();
+  $('.hide-answer-row').toggle();
+  $('.answer-row').toggle();
+  $('.answer-spot').removeClass('black purple blue green yellow orange red white');
+};
+
 /* -------------- Click Events!!! -------------- */
 
 // Start the game
@@ -163,20 +162,20 @@ $('.btn-start').click(function() {
   startGame();
   setAnswer();
   displayAnswer();
-})
+});
 
 // Start a new game
 $('.btn-restart').click(function() {
-  clearAllValues();
+  clearAllRows();
+  resetGuess();
   restartGame();
   setAnswer();
   displayAnswer();
-  resetGuess();
-  $('.color').on('click', function() {
+  $('.color').click(function() {
     var color = $(this).attr('class').split(/\s/)[0];
     selectColor(color);
   });
-})
+});
 
 // Placing a guess
 $('.color').click(function() {
@@ -189,10 +188,10 @@ $('.btn-guess').click(function() {
   if (itIsRight(guess, answer)) {
     finishGame();
   } else {
-    console.log(rSrP(guess, answer), rSwP(guess, answer));
+    console.log(howManyAreCorrect(guess, answer), howManyAreClose(guess, answer));
     changeRows();
     resetGuess();
-    $('.color').on('click', function() {
+    $('.color').click(function() {
       var color = $(this).attr('class').split(/\s/)[0];
       selectColor(color);
     });
@@ -201,9 +200,9 @@ $('.btn-guess').click(function() {
 
 // Clearing a guess
 $('.btn-clear').click(function() {
-  clearSingleRowValues();
+  clearOneRow();
   if (guess.length === 4) {
-    $('.color').on('click', function() {
+    $('.color').click(function() {
       var color = $(this).attr('class').split(/\s/)[0];
       selectColor(color);
     });
