@@ -2,7 +2,7 @@
 var currentRow = 1,
     colors = [
       'black',
-      'brown',
+      'purple',
       'blue',
       'green',
       'yellow',
@@ -114,7 +114,7 @@ const restartGame = () => {
   $('.btn-restart').toggle();
   $('.hide-answer-row').toggle();
   $('.answer-row').toggle();
-  $('.answer-spot').removeClass('black brown blue green yellow orange red white');
+  $('.answer-spot').removeClass('black purple blue green yellow orange red white');
 }
 
 // Change rows after an incorrect guess has been made
@@ -129,13 +129,13 @@ const changeRows = () => {
 
 // Clear all classes and data attributes of an unsubmitted guess line
 const clearSingleRowValues = () => {
-  $(`#row${currentRow} > .spots > .spot`).removeClass('black brown blue green yellow orange red white up-next');
+  $(`#row${currentRow} > .spots > .spot`).removeClass('black purple blue green yellow orange red white up-next');
   $(`#row${currentRow} > .spots > .spot`).removeAttr('data-value');
   $(`#row${currentRow} > .spots > .spot:first`).toggleClass('up-next');
 };
 
 const clearAllValues = () => {
-  $('.spot').removeClass('black brown blue green yellow orange red white up-next');
+  $('.spot').removeClass('black purple blue green yellow orange red white up-next');
   $('.spot').removeAttr('data-value');
   $(`#row1 > .spots > .spot:first`).toggleClass('up-next');
   currentRow = 1;

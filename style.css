@@ -20,7 +20,7 @@ header, main {
 .hide-answer-row {
   height: 7%;
   margin: 1.45vh;
-  /* Pattern provided by Tab Atkins Jr. from CSS3 Patterns Gallery*/
+  /* Brick pattern provided by Tab Atkins Jr. from CSS3 Patterns Gallery*/
   background-color: silver;
   background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
   linear-gradient(155deg, #d00 23px, transparent 23px),
@@ -64,7 +64,6 @@ header, main {
   height: 75%;
   margin: 1%;
   display: inline-block;
-  /* border: black 1px dashed; */
   vertical-align: middle;
 }
 
@@ -112,6 +111,38 @@ header, main {
 
 .color:hover {
   cursor: pointer;
+}
+
+.black {
+  background-color: black;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.red {
+  background-color: red;
+}
+
+.white {
+  background-color: white;
 }
 
 /* Buttons */
