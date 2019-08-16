@@ -40,7 +40,8 @@ const switchSpots = () => {
   let currentSpotNum = +currentSpot
     .attr('class')
     .split(/\s/)
-    .filter(el => /spot\d/.test(el))[0].slice(4);
+    .filter(el => /spot\d/.test(el))[0]
+    .slice(4);
   currentSpot.toggleClass('up-next');
   $(`#row${currentRow} > .spots > .spot${currentSpotNum + 1}`).toggleClass('up-next');
 }

@@ -13,8 +13,7 @@ After a year and change of letting my chops get rusty, I've hopped back into the
 I love puzzles. I have a Mastermind app on my phone. Using the app as a rough template, recreating a simplistic game with easy parameters (1 player, 8 colors, 10 turns) seemed a good project to acclimate back to regular development work.
 ***
 ## Project Log
-#### Everything So Far
-###### 08.16.19
+#### Everything So Far — 08.16.19
 The lion's share of the work done up to this point was done on my local machine, disconnected from GitHub (and the prying eyes of my ex-cohort mates.) Whether this was to avoid the digital stress of digital eyes peering over my digital shoulder, or because I was potentially quite rusty at the command line (I'll neither confirm nor deny such rumors), the end result is I did not put much effort into tracking my progress. However, I've distilled my general roadmap into a convenient bulleted list below and will start from this point on to make structured updates moving forward.
 
 1. Built general game board consisting of...
