@@ -47,10 +47,10 @@ const switchSpots = () => {
 }
 
 // Compare the guess array and answer array to see if they are the same
-const itIsRight = (arr1, arr2) => arr1.join('') === arr2.join('');
+const checkGuess = (arr1, arr2) => arr1.join('') === arr2.join('');
 
 // Count how many spots are correct (Right Spot, Right Place)
-const howManyAreCorrect = (arr1, arr2) => {
+const findCorrectSpots = (arr1, arr2) => {
   var count = 0;
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] === arr2[i]) {
@@ -60,7 +60,7 @@ const howManyAreCorrect = (arr1, arr2) => {
   return count;
 }
 
-// Remove correct spots for the howManyAreClose calculation
+// Remove correct spots for the findCloseSpots calculation
 const removeCorrectSpots = (arr1, arr2) => {
   [arr1, arr2] = [arr1.slice(0), arr2.slice(0)];
   for (let i = 0; i < arr1.length; i++) {
@@ -72,7 +72,7 @@ const removeCorrectSpots = (arr1, arr2) => {
 }
 
 // Count how many spots are the right color but in the wrong index
-const howManyAreClose = (arr1, arr2) => {
+const findCloseSpots = (arr1, arr2) => {
   [arr1, arr2] = removeCorrectSpots(arr1, arr2);
   var count = 0;
   for (let i = 0; i < arr1.length; i++) {
@@ -186,10 +186,10 @@ $('.color').click(function() {
 
 // Submitting a guess
 $('.btn-guess').click(function() {
-  if (itIsRight(guess, answer)) {
+  if (checkGuess(guess, answer)) {
     finishGame();
   } else {
-    console.log(howManyAreCorrect(guess, answer), howManyAreClose(guess, answer));
+    console.log(findCorrectSpots(guess, answer), findCloseSpots(guess, answer));
     changeRows();
     resetGuess();
     $('.color').click(function() {
