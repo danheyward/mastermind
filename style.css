@@ -2,6 +2,7 @@
 body {
   margin: 10px;
   padding: 0px;
+  font-family: 'Nunito', sans-serif;
 }
 
 header, main {
@@ -18,8 +19,14 @@ header, main {
 
 .hide-answer-row {
   height: 7%;
-  background-color: green;
   margin: 1.45vh;
+  background-color: silver;
+  background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
+  linear-gradient(155deg, #d00 23px, transparent 23px),
+  linear-gradient(335deg, #b00 23px, transparent 23px),
+  linear-gradient(155deg, #d00 23px, transparent 23px);
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
 }
 
 .answer-row {
@@ -88,7 +95,6 @@ header, main {
   width: 10%;
 }
 
-
 /* Colors */
 .colors {
   display: none;
@@ -100,6 +106,7 @@ header, main {
   height: 50px;
   border-radius: 50%;
   border: red 1px dashed;
+  margin: 0 8px;
 }
 
 .color:hover {
@@ -107,27 +114,22 @@ header, main {
 }
 
 /* Buttons */
-.btn-start {
+.btn-start, .btn-guess, .btn-clear, .btn-restart {
   border-top: 1px solid #99badd;
   background: #99badd;
-  padding: 20px 40px;
+  padding: 10px 15px;
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
   border-radius: 40px;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 12px;
   text-decoration: none;
   vertical-align: middle;
 }
 
-.btn-start:hover {
-  background: #ffffff;
-  color: #99badd;
-}
-
-.btn-start:active {
-  border-top-color: #99badd;
-  background: #99badd;
+.btn-start {
+  font-size: 15px;
+  padding: 20px 40px;
 }
 
 .btn-guess {
@@ -140,4 +142,20 @@ header, main {
 
 .btn-restart {
   display: none;
+}
+
+.btn-start:hover, .btn-guess:hover, .btn-clear:hover, .btn-restart:hover {
+  background: #ffffff;
+  color: #99badd;
+}
+
+.btn-start:active, .btn-guess:active, .btn-guess:active, .btn-guess:active, .btn-guess:focus {
+  border-top-color: #99badd;
+  background: #99badd;
+}
+
+.btn-guess:disabled {
+  border-top-color: lightgray;
+  background: lightgray;
+  color: gray;
 }
