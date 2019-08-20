@@ -1,4 +1,4 @@
-/* Initial CSS */
+/* Initial Settings */
 body {
   margin: 10px;
   padding: 0px;
@@ -10,7 +10,7 @@ header, main {
   min-width: 600px;
 }
 
-/* General Gameboard CSS */
+/* General Gameboard */
 #gameboard {
   display: inline-block;
   width: 600px;
@@ -18,6 +18,24 @@ header, main {
   border: lightgray 1px dashed;
 }
 
+.row {
+  height: 7%;
+  margin: 1.45vh;
+  background-color: #DDDDDD;
+}
+
+.current {
+  background-color: #C4C4C4;
+}
+
+.row-el {
+  height: 75%;
+  margin: 5px 0px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Answer */
 .hide-answer-row {
   height: 7%;
   margin: 1.45vh;
@@ -48,54 +66,31 @@ header, main {
   margin-top: 2%;
 }
 
-.row {
-  height: 7%;
-  margin: 1.45vh;
-  background-color: #DDDDDD;
-}
-
-.current {
-  background-color: #C4C4C4;
-}
-
-.winner {
-  /* Star pattern provided by Nicholas Gallagher from CSS3 Patterns Gallery */
-  background:
-  linear-gradient(324deg, #FFFFFF 4%,   transparent 4%) -70px 43px,
-  linear-gradient( 36deg, #FFFFFF 4%,   transparent 4%) 30px 43px,
-  linear-gradient( 72deg, #FAFF00 8.5%, transparent 8.5%) 30px 43px,
-  linear-gradient(288deg, #FAFF00 8.5%, transparent 8.5%) -70px 43px,
-  linear-gradient(216deg, #FAFF00 7.5%, transparent 7.5%) -70px 23px,
-  linear-gradient(144deg, #FAFF00 7.5%, transparent 7.5%) 30px 23px,
-
-  linear-gradient(324deg, #FFFFFF 4%,   transparent 4%) -20px 93px,
-  linear-gradient( 36deg, #FFFFFF 4%,   transparent 4%) 80px 93px,
-  linear-gradient( 72deg, #FAFF00 8.5%, transparent 8.5%) 80px 93px,
-  linear-gradient(288deg, #FAFF00 8.5%, transparent 8.5%) -20px 93px,
-  linear-gradient(216deg, #FAFF00 7.5%, transparent 7.5%) -20px 73px,
-  linear-gradient(144deg, #FAFF00 7.5%, transparent 7.5%) 80px 73px;
-  background-color: #FFFFFF;
-  background-size: 100px 100px;
-  /* End of star pattern */
-}
-
-.row-el {
-  height: 75%;
-  margin: 1%;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* Number CSS */
 .answer-spots {
   height: 100%;
   vertical-align: center;
   line-height: 100%;
 }
 
-/* Spot and Color CSS */
+/* Numbers */
+.numbers {
+  width: 20%;
+  /* background-color: red; */
+  vertical-align: top;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.number {
+  font-size: 30px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin:18px 0px;
+}
+
+/* Spots and Colors */
 .spots {
-  width: 80%;
+  width: 50%;
   padding: .5vw .5vh;
 }
 
@@ -112,7 +107,7 @@ header, main {
 
 .spot {
   border: white 1px dashed;
-  margin: 5px 10px;
+  margin: 5px 5px;
 }
 
 .color {
@@ -166,6 +161,34 @@ header, main {
 .white {
   background-color: #FFFFFF;
   border-color: #E6E6E6
+}
+
+/* Checkers */
+.checkers {
+  width: 20%;
+  background-color: blue;
+}
+
+/* Game states */
+.winner {
+  /* Star pattern provided by Nicholas Gallagher from CSS3 Patterns Gallery */
+  background:
+  linear-gradient(324deg, #FFFFFF 4%,   transparent 4%) -70px 43px,
+  linear-gradient( 36deg, #FFFFFF 4%,   transparent 4%) 30px 43px,
+  linear-gradient( 72deg, #FAFF00 8.5%, transparent 8.5%) 30px 43px,
+  linear-gradient(288deg, #FAFF00 8.5%, transparent 8.5%) -70px 43px,
+  linear-gradient(216deg, #FAFF00 7.5%, transparent 7.5%) -70px 23px,
+  linear-gradient(144deg, #FAFF00 7.5%, transparent 7.5%) 30px 23px,
+
+  linear-gradient(324deg, #FFFFFF 4%,   transparent 4%) -20px 93px,
+  linear-gradient( 36deg, #FFFFFF 4%,   transparent 4%) 80px 93px,
+  linear-gradient( 72deg, #FAFF00 8.5%, transparent 8.5%) 80px 93px,
+  linear-gradient(288deg, #FAFF00 8.5%, transparent 8.5%) -20px 93px,
+  linear-gradient(216deg, #FAFF00 7.5%, transparent 7.5%) -20px 73px,
+  linear-gradient(144deg, #FAFF00 7.5%, transparent 7.5%) 80px 73px;
+  background-color: #FFFFFF;
+  background-size: 100px 100px;
+  /* End of star pattern */
 }
 
 /* Buttons */

@@ -77,9 +77,10 @@ const findCloseSpots = (arr1, arr2) => {
   var count = 0;
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] === 'X') {}
-    else if (arr2.indexOf(arr1[i]) !== -1 && arr1[i] !== arr2[i]) {
+    else if (arr2.indexOf(arr1[i]) !== -1) {
       count++;
       arr2.splice(arr2.indexOf(arr1[i]), 1, 'X');
+      console.log(`Here is arr2: ${arr2}`);
     };
   };
   return count;
