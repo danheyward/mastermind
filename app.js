@@ -123,7 +123,10 @@ const clearAllRows = () => {
 };
 
 // Reset guess array to empty array
-const resetGuess = () => guess = [];
+const resetGuess = () => {
+  guess = [];
+  $('.btn-guess').prop('disabled', true);
+}
 
 // Start the game
 const startGame = () => {
@@ -137,12 +140,12 @@ const startGame = () => {
 const finishGame = () => {
   $('.colors').toggle();
   $('.btn-restart').toggle();
-  $('.btn-guess').prop('disabled', true);
   $('.btn-guess').toggle();
   $('.btn-clear').toggle();
   $('.hide-answer-row').toggle();
   $('.answer-row').toggle();
-  $(`#row${currentRow}`).addClass('winner');
+  $(`#row${currentRow}, .answer-spots`).addClass('winner');
+  resetGuess();
 };
 
 // Start a new game
@@ -154,6 +157,7 @@ const restartGame = () => {
   $('.hide-answer-row').toggle();
   $('.answer-row').toggle();
   $('.answer-spot').removeClass('black purple blue green yellow orange red white');
+  resetGuess();
 };
 
 /* -------------- Click Events!!! -------------- */
@@ -163,12 +167,15 @@ $('.btn-start').click(function() {
   startGame();
   setAnswer();
   displayAnswer();
+  $('.color').click(function() {
+    var color = $(this).attr('class').split(/\s/)[0];
+    selectColor(color);
+  });
 });
 
 // Start a new game
 $('.btn-restart').click(function() {
   clearAllRows();
-  resetGuess();
   restartGame();
   setAnswer();
   displayAnswer();
@@ -176,12 +183,6 @@ $('.btn-restart').click(function() {
     var color = $(this).attr('class').split(/\s/)[0];
     selectColor(color);
   });
-});
-
-// Placing a guess
-$('.color').click(function() {
-  var color = $(this).attr('class').split(/\s/)[0];
-  selectColor(color);
 });
 
 // Submitting a guess
