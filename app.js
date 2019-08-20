@@ -128,6 +128,13 @@ const resetGuess = () => {
   $('.btn-guess').prop('disabled', true);
 }
 
+// Reset row CSS
+const resetRows = () => {
+  $('.winner').removeClass('winner');
+  $('.current').removeClass('current');
+  $('#row1').addClass('current');
+}
+
 // Start the game
 const startGame = () => {
   $('.colors').toggle();
@@ -158,6 +165,7 @@ const restartGame = () => {
   $('.answer-row').toggle();
   $('.answer-spot').removeClass('black purple blue green yellow orange red white');
   resetGuess();
+  resetRows();
 };
 
 /* -------------- Click Events!!! -------------- */
