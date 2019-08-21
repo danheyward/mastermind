@@ -93,7 +93,8 @@ const findCloseSpots = (arr1, arr2) => {
 
 const showCloseSpots = (correct, count) => {
   for (let i = correct; i < count + correct; i++) {
-    $(`#row${currentRow} > .checkers > .checker${correct + 1}`).addClass('close');
+    console.log('this fired');
+    $(`#row${currentRow} > .checkers > .checker${i + 1}`).addClass('close');
   };
 };
 
@@ -145,6 +146,7 @@ const resetRows = () => {
   $('.winner').removeClass('winner');
   $('.current').removeClass('current');
   $('#row1').addClass('current');
+  $('.checker').removeClass('correct close');
 }
 
 // Start the game
