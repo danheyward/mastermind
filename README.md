@@ -30,8 +30,12 @@ The lion's share of the work done up to this point was done on my local machine,
 4. Built game functions
 5. Added in styling + removed unused HTML elements
 6. Annotated JS code and edited for semantic readability
+
+#### I feel pretty (and I'm finally functional!) — 08.21.19
+Thanks to some lovely stylings from [CSS3 Patterns Gallery](https://leaverou.github.io/css3patterns/), as well as simple transition animations, the styling of the game looks much nicer. I also reinserted the row numbers and guess 'checkers' (better name coming...maybe...). Now you can play the game without looking at the console!
+
 ***
 ## Current Hurdles + Next Steps
-I'm mentally stuck on how I want the game 'checker' to be displayed. The game I've used for inspiration has a set of 4 'pegs' in-line with each row that, after a guess has been placed, fill in with either black dots (right color, right place), white dots (right color, wrong place), or remain blank (incorrect color). There's no concern about functionality, I just need to pick a design direction and go for it.
+**RESOLVED** `I'm mentally stuck on how I want the game 'checker' to be displayed. The game I've used for inspiration has a set of 4 'pegs' in-line with each row that, after a guess has been placed, fill in with either black dots (right color, right place), white dots (right color, wrong place), or remain blank (incorrect color). There's no concern about functionality, I just need to pick a design direction and go for it.`
 
 One feature that I'd like to add is the ability to select specific dots to edit without having to clear the entire guess. This will involve adding a click event on each individual spot that allows the user to edit that spot in the guess. More to come on this, as of now it is a stretch goal for after the MVP of gameplay is met.
