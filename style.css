@@ -15,7 +15,11 @@ header, main {
   display: inline-block;
   width: 600px;
   height: 1100px;
-  border: lightgray 1px dashed;
+  border: #DDDDDD 1px dashed;
+}
+
+.row, .current {
+  transition: background 0.5s;
 }
 
 .row {
@@ -175,12 +179,26 @@ header, main {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border-color: #DDDDDD;
+  border-color: #FFFFFF;
   border-width: medium;
   border-style: solid;
   margin: 0 3px;
   margin-top: 25px;
   background-color: #DDDDDD;
+  transition: background 0.5s;
+  transition: border 0.5s;
+}
+
+.correct, .close {
+  border-color: #DDDDDD;
+}
+
+.correct {
+  background-color: #000000;
+}
+
+.close {
+  background-color: #FFFFFF;
 }
 
 /* Game states */

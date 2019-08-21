@@ -60,6 +60,12 @@ const findCorrectSpots = (arr1, arr2) => {
   return count;
 }
 
+const showCorrectSpots = count => {
+  for (let i = 0; i < count; i++) {
+    $(`#row${currentRow} > .checkers > .checker${i+1}`).addClass('correct');
+  };
+};
+
 // Remove correct spots for the findCloseSpots calculation
 const removeCorrectSpots = (arr1, arr2) => {
   [arr1, arr2] = [arr1.slice(0), arr2.slice(0)];
@@ -80,11 +86,16 @@ const findCloseSpots = (arr1, arr2) => {
     else if (arr2.indexOf(arr1[i]) !== -1) {
       count++;
       arr2.splice(arr2.indexOf(arr1[i]), 1, 'X');
-      console.log(`Here is arr2: ${arr2}`);
     };
   };
   return count;
 }
+
+const showCloseSpots = (correct, count) => {
+  for (let i = correct; i < count + correct; i++) {
+    $(`#row${currentRow} > .checkers > .checker${correct + 1}`).addClass('close');
+  };
+};
 
 // Place a color in a guess
 const selectColor = color => {
@@ -199,7 +210,8 @@ $('.btn-guess').click(function() {
   if (checkGuess(guess, answer)) {
     finishGame();
   } else {
-    console.log(findCorrectSpots(guess, answer), findCloseSpots(guess, answer));
+    showCorrectSpots(findCorrectSpots(guess, answer));
+    showCloseSpots(findCorrectSpots(guess, answer), findCloseSpots(guess, answer));
     changeRows();
     resetGuess();
     $('.color').click(function() {
