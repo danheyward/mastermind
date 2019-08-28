@@ -168,6 +168,10 @@ header, main {
   border-color: #E6E6E6
 }
 
+.pushed {
+  opacity: 0.5;
+}
+
 /* Checkers */
 .checkers {
   width: 20%;

@@ -193,6 +193,12 @@ $('.btn-start').click(function() {
     var color = $(this).attr('class').split(/\s/)[0];
     selectColor(color);
   });
+  $('.color').mousedown(function() {
+    $(this).toggleClass('pushed');
+  });
+  $('.color').mouseup(function() {
+    $(this).toggleClass('pushed');
+  });
 });
 
 // Start a new game
@@ -204,6 +210,12 @@ $('.btn-restart').click(function() {
   $('.color').click(function() {
     var color = $(this).attr('class').split(/\s/)[0];
     selectColor(color);
+  });
+  $('.color').mousedown(function() {
+    $(this).toggleClass('pushed');
+  });
+  $('.color').mouseup(function() {
+    $(this).toggleClass('pushed');
   });
 });
 
@@ -220,6 +232,12 @@ $('.btn-guess').click(function() {
       var color = $(this).attr('class').split(/\s/)[0];
       selectColor(color);
     });
+    $('.color').mousedown(function() {
+      $(this).toggleClass('pushed');
+    });
+    $('.color').mouseup(function() {
+      $(this).toggleClass('pushed');
+    });
   };
 });
 
@@ -230,6 +248,12 @@ $('.btn-clear').click(function() {
     $('.color').click(function() {
       var color = $(this).attr('class').split(/\s/)[0];
       selectColor(color);
+    });
+    $('.color').mousedown(function() {
+      $(this).toggleClass('pushed');
+    });
+    $('.color').mouseup(function() {
+      $(this).toggleClass('pushed');
     });
   };
   resetGuess();
